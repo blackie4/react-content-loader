@@ -1,24 +1,24 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`BulletListStyle renders correctly 1`] = `
+exports[`FacebookStyle renders correctly 1`] = `
 <svg
-  aria-labelledby="BulletListStyle"
+  aria-labelledby="FacebookStyle-aria"
   role="img"
   style={Object {}}
   viewBox="0 0 400 130"
 >
   <title
-    id="BulletListStyle"
+    id="FacebookStyle-aria"
   >
     Loading...
   </title>
   <rect
-    clipPath="url(#BulletListStyle-diff)"
+    clipPath="url(#FacebookStyle-diff)"
     height={130}
     role="presentation"
     style={
       Object {
-        "fill": "url(#BulletListStyle-animated-diff)",
+        "fill": "url(#FacebookStyle-animated-diff)",
       }
     }
     width={400}
@@ -29,63 +29,56 @@ exports[`BulletListStyle renders correctly 1`] = `
     role="presentation"
   >
     <clipPath
-      id="BulletListStyle-diff"
+      id="FacebookStyle-diff"
     >
-      <circle
-        cx="10"
-        cy="20"
-        r="8"
-      />
       <rect
-        height="10"
-        rx="5"
-        ry="5"
-        width="220"
-        x="25"
+        height="6.4"
+        rx="4"
+        ry="4"
+        width="117"
+        x="70"
         y="15"
       />
-      <circle
-        cx="10"
-        cy="50"
-        r="8"
+      <rect
+        height="6.4"
+        rx="3"
+        ry="3"
+        width="85"
+        x="70"
+        y="35"
       />
       <rect
-        height="10"
-        rx="5"
-        ry="5"
-        width="220"
-        x="25"
-        y="45"
-      />
-      <circle
-        cx="10"
-        cy="80"
-        r="8"
+        height="6.4"
+        rx="3"
+        ry="3"
+        width="350"
+        x="0"
+        y="80"
       />
       <rect
-        height="10"
-        rx="5"
-        ry="5"
-        width="220"
-        x="25"
-        y="75"
-      />
-      <circle
-        cx="10"
-        cy="110"
-        r="8"
+        height="6.4"
+        rx="3"
+        ry="3"
+        width="380"
+        x="0"
+        y="100"
       />
       <rect
-        height="10"
-        rx="5"
-        ry="5"
-        width="220"
-        x="25"
-        y="105"
+        height="6.4"
+        rx="3"
+        ry="3"
+        width="201"
+        x="0"
+        y="120"
+      />
+      <circle
+        cx="30"
+        cy="30"
+        r="30"
       />
     </clipPath>
     <linearGradient
-      id="BulletListStyle-animated-diff"
+      id="FacebookStyle-animated-diff"
     >
       <stop
         offset="0%"

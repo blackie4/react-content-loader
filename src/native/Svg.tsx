@@ -13,6 +13,17 @@ import { IContentLoaderProps } from './'
 import offsetValueBound from './offsetValueBound'
 
 class NativeSvg extends Component<IContentLoaderProps, { offset: number }> {
+  static defaultProps = {
+    animate: true,
+    height: 130,
+    backgroundColor: '#f0f0f0',
+    rtl: false,
+    foregroundColor: '#e0e0e0',
+    speed: 1,
+    style: {},
+    width: 400,
+  }
+
   state = { offset: -1 }
 
   animatedValue = new Animated.Value(0)

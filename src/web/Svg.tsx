@@ -4,27 +4,30 @@ import uid from '../shared/uid'
 import { IContentLoaderProps } from './'
 
 const SVG: React.FC<IContentLoaderProps> = ({
-  animate = true,
-  backgroundColor = '#f0f0f0',
-  backgroundOpacity = 1,
-  baseUrl = '',
+  animate,
+  backgroundColor,
+  backgroundOpacity,
+  baseUrl,
   children,
-  foregroundColor = '#e0e0e0',
-  foregroundOpacity = 1,
-  gradientRatio = 2,
-  height = 130,
-  id = null,
-  interval = 0.25,
-  rtl = false,
-  speed = 2,
-  style = {},
-  title = 'Loading...',
-  width = 400,
+  foregroundColor,
+  foregroundOpacity,
+  gradientRatio,
+  height,
+  id,
+  interval,
+  rtl,
+  speed,
+  style,
+  title,
+  width,
   ...props
 }) => {
-  const idClip = id ? `${id}-diff` : uid()
-  const idGradient = id ? `${id}-animated-diff` : uid()
-  const rtlStyle = rtl ? { transform: 'scaleX(-1)' } : {}
+  const fixedId = id || uid()
+  const idClip = `${fixedId}-diff`
+  const idGradient = `${fixedId}-animated-diff`
+  const idAria = `${fixedId}-aria`
+
+  const rtlStyle = rtl ? { transform: 'scaleX(-1)' } : null
   const keyTimes = `0; ${interval}; 1`
   const dur = `${speed}s`
 
@@ -32,11 +35,11 @@ const SVG: React.FC<IContentLoaderProps> = ({
     <svg
       style={{ ...style, ...rtlStyle }}
       role="img"
-      aria-labelledby={id}
+      aria-labelledby={idAria}
       viewBox={`0 0 ${width} ${height}`}
       {...props}
     >
-      {title ? <title id={id}>{title}</title> : null}
+      {title ? <title id={idAria}>{title}</title> : null}
       <rect
         role="presentation"
         x="0"
@@ -103,6 +106,24 @@ const SVG: React.FC<IContentLoaderProps> = ({
       </defs>
     </svg>
   )
+}
+
+SVG.defaultProps = {
+  animate: true,
+  backgroundColor: '#f0f0f0',
+  backgroundOpacity: 1,
+  baseUrl: '',
+  foregroundColor: '#e0e0e0',
+  foregroundOpacity: 1,
+  gradientRatio: 2,
+  height: 130,
+  id: null,
+  interval: 0.25,
+  rtl: false,
+  speed: 2,
+  style: {},
+  title: 'Loading...',
+  width: 400,
 }
 
 export default SVG
