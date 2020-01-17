@@ -74,6 +74,7 @@ class NativeSvg extends Component<IContentLoaderProps, { offset: number }> {
       width,
       rtl,
       style,
+      viewBox = `0 0 ${width} ${height}`,
       ...props
     } = this.props
 
@@ -83,6 +84,7 @@ class NativeSvg extends Component<IContentLoaderProps, { offset: number }> {
 
     const rtlStyle = rtl ? { transform: [{ rotateY: '180deg' }] } : {}
     const composedStyle = Object.assign(style, rtlStyle)
+    const [_vbX, _vbY, vbWidth = width, vbHeight = height] = viewBox.split(' ')
 
     // Remove unnecessary keys
     delete props.id
@@ -91,17 +93,17 @@ class NativeSvg extends Component<IContentLoaderProps, { offset: number }> {
 
     return (
       <Svg
-        viewBox={`0 0 ${width} ${height}`}
+        style={composedStyle}
         width={width}
         height={height}
-        style={composedStyle}
+        viewBox={viewBox}
         {...props}
       >
         <Rect
           x="0"
           y="0"
-          width={width}
-          height={height}
+          width={Number(vbWidth)}
+          height={Number(vbHeight)}
           fill={`url(#${this.idClip})`}
           clipPath={`url(#${this.idGradient})`}
         />

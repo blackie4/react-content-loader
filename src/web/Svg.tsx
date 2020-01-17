@@ -20,6 +20,7 @@ const SVG: React.FC<IContentLoaderProps> = ({
   style,
   title,
   width,
+  viewBox = `0 0 ${width} ${height}`,
   ...props
 }) => {
   const fixedId = id || uid()
@@ -30,13 +31,16 @@ const SVG: React.FC<IContentLoaderProps> = ({
   const rtlStyle = rtl ? { transform: 'scaleX(-1)' } : null
   const keyTimes = `0; ${interval}; 1`
   const dur = `${speed}s`
+  const [_vbX, _vbY, vbWidth = width, vbHeight = height] = viewBox.split(' ')
 
   return (
     <svg
       style={{ ...style, ...rtlStyle }}
       role="img"
       aria-labelledby={idAria}
-      viewBox={`0 0 ${width} ${height}`}
+      width={width}
+      height={height}
+      viewBox={viewBox}
       {...props}
     >
       {title ? <title id={idAria}>{title}</title> : null}
@@ -44,8 +48,8 @@ const SVG: React.FC<IContentLoaderProps> = ({
         role="presentation"
         x="0"
         y="0"
-        width={width}
-        height={height}
+        width={Number(vbWidth)}
+        height={Number(vbHeight)}
         clipPath={`url(${baseUrl}#${idClip})`}
         style={{ fill: `url(${baseUrl}#${idGradient})` }}
       />
