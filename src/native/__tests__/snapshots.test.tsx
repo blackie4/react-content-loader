@@ -6,7 +6,7 @@ import ContentLoader from '../ContentLoader'
 describe('ContentLoader snapshots', () => {
   test('renders correctly the basic version', () => {
     const wrapper = renderer.create(
-      <ContentLoader animate={false} id="snapshots" />
+      <ContentLoader animate={false} uniqueKey="snapshots" />
     )
     const tree = wrapper.toJSON()
 
@@ -15,7 +15,7 @@ describe('ContentLoader snapshots', () => {
 
   test('renders correctly with viewBox empty', () => {
     const wrapper = renderer.create(
-      <ContentLoader animate={false} id="snapshots" viewBox="" />
+      <ContentLoader animate={false} uniqueKey="snapshots" viewBox="" />
     )
     const tree = wrapper.toJSON()
 
@@ -24,7 +24,11 @@ describe('ContentLoader snapshots', () => {
 
   test('renders correctly with viewBox defined', () => {
     const wrapper = renderer.create(
-      <ContentLoader animate={false} id="snapshots" viewBox="0 0 100 100" />
+      <ContentLoader
+        animate={false}
+        uniqueKey="snapshots"
+        viewBox="0 0 100 100"
+      />
     )
     const tree = wrapper.toJSON()
 
@@ -35,7 +39,7 @@ describe('ContentLoader snapshots', () => {
     const wrapper = renderer.create(
       <ContentLoader
         animate={false}
-        id="snapshots"
+        uniqueKey="snapshots"
         width={100}
         height={100}
         viewBox="0 0 100 100"

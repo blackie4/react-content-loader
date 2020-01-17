@@ -172,7 +172,7 @@ Defaults to `1`. Animation opacity (0 = transparent, 1 = opaque) used
 
 Defaults to an empty object.
 
-#### **`id?: string`** - _Web only_
+#### **`uniqueKey?: string`** - _Web only_
 
 Defaults to random unique id. Use the same value of prop key, that will solve inconsistency on the SSR, see more [here](https://github.com/danilowoz/react-content-loader/issues/78).
 

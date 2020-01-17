@@ -13,7 +13,7 @@ const SVG: React.FC<IContentLoaderProps> = ({
   foregroundOpacity,
   gradientRatio,
   height,
-  id,
+  uniqueKey,
   interval,
   rtl,
   speed,
@@ -23,7 +23,7 @@ const SVG: React.FC<IContentLoaderProps> = ({
   viewBox = `0 0 ${width} ${height}`,
   ...props
 }) => {
-  const fixedId = id || uid()
+  const fixedId = uniqueKey || uid()
   const idClip = `${fixedId}-diff`
   const idGradient = `${fixedId}-animated-diff`
   const idAria = `${fixedId}-aria`
