@@ -104,8 +104,8 @@ class NativeSvg extends Component<IContentLoaderProps, { offset: number }> {
         <Rect
           x="0"
           y="0"
-          width={Number(vbWidth)}
-          height={Number(vbHeight)}
+          width={parseInt(vbWidth as string)}
+          height={parseInt(vbHeight as string)}
           fill={`url(#${this.idClip})`}
           clipPath={`url(#${this.idGradient})`}
         />

@@ -48,8 +48,8 @@ const SVG: React.FC<IContentLoaderProps> = ({
         role="presentation"
         x="0"
         y="0"
-        width={Number(vbWidth)}
-        height={Number(vbHeight)}
+        width={parseInt(vbWidth as string)}
+        height={parseInt(vbHeight as string)}
         clipPath={`url(${baseUrl}#${idClip})`}
         style={{ fill: `url(${baseUrl}#${idGradient})` }}
       />

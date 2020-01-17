@@ -10,11 +10,13 @@ export interface IContentLoaderProps extends SVGAttributes<SVGElement> {
   foregroundColor?: string
   foregroundOpacity?: number
   gradientRatio?: number
+  height?: number
   interval?: number
   rtl?: boolean
   speed?: number
   title?: string
   uniqueKey?: string
+  width?: number
 }
 
 export { default as Facebook } from './presets/FacebookStyle'
